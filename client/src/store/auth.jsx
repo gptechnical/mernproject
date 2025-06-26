@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) => {
 
 const getServices = async () =>{
   try {
-    const response = await fetch("http://localhost:5000/api/data/service",{
+    const response = await fetch(`${API}/api/data/service`,{
       method: "GET",
     });
     if(response.ok) {
