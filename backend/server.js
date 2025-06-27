@@ -14,8 +14,7 @@ app.use(express.json());
 const corsOptions = {
 origin: (origin, callback) => {
   const allowedOrigins = [
-     "http://localhost:5173",
-     "http://localhost:4173",
+    
      "https://codegptech.shop",
      "https://www.codegptech.shop",
   ];
