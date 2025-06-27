@@ -10,13 +10,22 @@ const serviceRoute = require("./router/service-router");
 const adminRoute = require("./router/admin-router");
 
 app.use(express.json());
-app.use(cors());
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization");
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE,OPTIONS')
-    next();
-});
+const corsOptions = {
+origin: (origin, callback) => {
+  const allowedOrigins = [
+     "http://localhost:5173",
+     "http://localhost:4173",
+     "https://codegptech.shop",
+     "https://www.codegptech.shop",
+  ];
+  const isAllowed = allowedOrigins.include(origin);
+  callback(null, isAllowed ? origin : false );
+},
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", serviceRoute);
@@ -27,7 +36,7 @@ app.use("/api/admin", adminRoute);
 
 app.use(errorMiddleware);
 
-const PORT = 5001;
+const PORT = 5500;
 
 connectDb().then(() => {
   app.listen(PORT, () => {
