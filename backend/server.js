@@ -23,6 +23,7 @@ origin: (origin, callback) => {
   callback(null, isAllowed ? origin : false );
 },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
 
