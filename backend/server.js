@@ -12,15 +12,7 @@ const adminRoute = require("./router/admin-router");
 app.use(express.json());
 
 const corsOptions = {
-origin: (origin, callback) => {
-  const allowedOrigins = [
-    
-     "https://codegptech.shop",
-     "https://www.codegptech.shop",
-  ];
-  const isAllowed = allowedOrigins.include(origin);
-  callback(null, isAllowed ? origin : false );
-},
+  origin: "*",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
