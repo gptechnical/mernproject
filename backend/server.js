@@ -11,24 +11,11 @@ const adminRoute = require("./router/admin-router");
 
 app.use(express.json());
 
-const corsOptions = {
-origin: (origin, callback) => {
-  const allowedOrigins = [
-     "http://localhost:5173",
-     "http://localhost:4173",
-     "https://codegptech.shop",
-     "https://www.codegptech.shop",
-  ];
-  const isAllowed = allowedOrigins.include(origin);
-  callback(null, isAllowed ? origin : false );
-},
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+app.use(cors({
+   origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-};
-
-
-app.use(cors(corsOptions));
+}));
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", serviceRoute);
