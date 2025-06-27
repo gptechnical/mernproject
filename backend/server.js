@@ -21,6 +21,9 @@ const corsOptions = {
     callback(null, isAllowed ? origin : false );
   },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  headers: {
+          'Access-Control-Allow-Origin': '*'
+  },
   credentials: true,
 };
 
