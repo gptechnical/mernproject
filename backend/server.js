@@ -26,7 +26,7 @@ app.use(express.json());
 // };
 
 app.use(cors({
-  origin: "*"
+  origin: "https://codegptech.shop"
 }));
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
