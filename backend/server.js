@@ -12,7 +12,7 @@ const adminRoute = require("./router/admin-router");
 app.use(express.json());
 
 app.use(cors({
-   origin: 'http://localhost:5173',
+   origin: 'https://codegptech.shop',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
