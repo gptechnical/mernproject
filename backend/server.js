@@ -28,7 +28,7 @@ app.use("/api/admin", adminRoute);
 
 app.use(errorMiddleware);
 
-const PORT = 5001;
+const PORT = 5000;
 
 connectDb().then(() => {
   app.listen(PORT, () => {
