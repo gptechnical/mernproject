@@ -9,13 +9,14 @@ const contactRoute = require("./router/contact-router");
 const serviceRoute = require("./router/service-router");
 const adminRoute = require("./router/admin-router");
 
+app.use(express.json());
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "http://localhost:5173",
-      "http://localhost:4173",
-      "https://codegptech.shop",
-      "https://www.codegptech.shop",
+      "http://localhost:5173/",
+      "http://localhost:4173/",
+      "https://codegptech.shop/",
+      "https://www.codegptech.shop/",
     ];
     const isAllowed = allowedOrigins.includes(origin);
     callback(null, isAllowed ? origin : false );
@@ -25,7 +26,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
