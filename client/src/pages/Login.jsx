@@ -39,6 +39,7 @@ const Login = () => {
         setUser({ email: "", password: "" });
         toast.success("login successful");
         navigate("/")
+        
       }else{
         toast.error(respons?.data.extraDetails ? respons?.data.extraDetails : respons?.data.message);
         console.log("invalid credential");
