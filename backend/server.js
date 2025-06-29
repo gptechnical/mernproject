@@ -21,7 +21,7 @@ const corsOptions = {
     const isAllowed = allowedOrigins.includes(origin);
     callback(null, isAllowed ? origin : false );
   },
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
   credentials: true,
 };
 
