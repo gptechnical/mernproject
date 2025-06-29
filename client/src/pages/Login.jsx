@@ -33,7 +33,7 @@ const Login = () => {
     console.log(user);
 
     try {
-      const respons = await axios.post(`http://localhost:5001/api/auth/login`,user)
+      const respons = await axios.post(`${API}/api/auth/login`,user)
       if(respons.status == 200){
         storeTokenInLS(respons?.data.token);
         setUser({ email: "", password: "" });
