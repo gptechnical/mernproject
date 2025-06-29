@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Section, Form, Label, Input, Button, Span, SpanIcon, Img, Div} from '../styles/Login.styled';
 import { MdEmail } from "react-icons/md";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
