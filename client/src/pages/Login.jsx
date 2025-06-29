@@ -5,6 +5,7 @@ import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 
 const Login = () => {
