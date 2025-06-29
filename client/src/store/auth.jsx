@@ -60,9 +60,7 @@ export const AuthProvider = ({ children }) => {
 
 const getServices = async () =>{
   try {
-    const response = await axios(`${API}/api/data/service`,{
-      method: "GET",
-    });
+    const response = await axios.get(`${API}/api/data/service`)
     if(response.ok) {
       const data = await response.json();
       setServices(data.msg);
