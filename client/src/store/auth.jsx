@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import axios from 'axios'
 export const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
@@ -60,7 +59,9 @@ export const AuthProvider = ({ children }) => {
 
 const getServices = async () =>{
   try {
-    const response = await axios.get(`${API}/api/data/service`)
+    const response = await fetch(`${API}/api/data/service`,{
+      method: "GET",
+    });
     if(response.ok) {
       const data = await response.json();
       setServices(data.msg);
