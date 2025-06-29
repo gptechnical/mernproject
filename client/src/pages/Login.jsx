@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       console.log("API>>>>>", API)
-      const response = await fetch(`${API}/api/auth/login`, {
+      const response = await axios.post(`${API}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
