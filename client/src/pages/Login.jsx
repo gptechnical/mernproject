@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 import { toast } from 'react-toastify';
 
+
 const Login = () => {
   const [showPassowrd, setShowPassword] = useState(false);
   const [user, setUser] = useState({
@@ -32,7 +33,7 @@ const Login = () => {
     console.log(user);
 
     try {
-      const response = await fetch(`${API}/api/auth/login`, {
+      const response = await fetch(`http://localhost:5001/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
