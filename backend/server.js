@@ -9,38 +9,32 @@ const contactRoute = require("./router/contact-router");
 const serviceRoute = require("./router/service-router");
 const adminRoute = require("./router/admin-router");
 
+// Middleware to parse JSON requests
 app.use(express.json());
+
+// ✅ CORS configuration: Allow all origins
 const corsOptions = {
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      "http://localhost:5173",
-      "http://localhost:4173",
-      "https://codegptech.shop",
-      "https://www.codegptech.shop",
-    ];
-    const isAllowed = allowedOrigins.includes(origin);
-    callback(null, isAllowed ? origin : false );
-  },
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true,
+  origin: '*', // Allow all origins
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD", // Allowed methods
+  credentials: false, // Set to true if you need to allow credentials (cookies, headers, etc.)
 };
 
 app.use(cors(corsOptions));
 
-app.use("/api/auth", authRoute);
-app.use("/api/form", contactRoute);
-app.use("/api/data", serviceRoute);
+// Routes for your app
+app.use("/api/auth", authRoute); // Auth routes
+app.use("/api/form", contactRoute); // Contact form routes
+app.use("/api/data", serviceRoute); // Service-related routes
+app.use("/api/admin", adminRoute); // Admin routes
 
-//lets define admin route
-
-app.use("/api/admin", adminRoute);
-
+// Error handling middleware (for catching errors)
 app.use(errorMiddleware);
 
+// Database connection and server startup
 const PORT = 5001;
-
 connectDb().then(() => {
   app.listen(PORT, () => {
-    console.log(`server is running at port: ${PORT}`);
- });
+    console.log(`Server is running on port: ${PORT}`);
+  });
 });
+
