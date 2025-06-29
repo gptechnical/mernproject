@@ -33,7 +33,8 @@ const Login = () => {
     console.log(user);
 
     try {
-      const response = await fetch(`http://localhost:5001/api/auth/login`, {
+      console.log("API>>>>>", API)
+      const response = await fetch(`${API}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
