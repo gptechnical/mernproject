@@ -2,3 +2,4 @@ node_modules
 
 # Secret
 .evn
+.env
