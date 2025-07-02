@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Section, Form, Label, Input, Button, Span, SpanIcon, Img, Div} from '../styles/Login.styled';
 import { MdEmail } from "react-icons/md";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 import { toast } from 'react-toastify';
-
+import axios from 'axios'
 
 const Login = () => {
   const [showPassowrd, setShowPassword] = useState(false);
@@ -33,28 +33,39 @@ const Login = () => {
     console.log(user);
 
     try {
-      const response = await fetch(`${API}/api/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
-      console.log("login data : ", response);
-
-      const res_data = await response.json();
-      if (response.ok) {
-        // alert("Login successful");
-        // localStorage.setItem("token", res_data.token);
-        storeTokenInLS(res_data.token);
+      const respons = await axios.post(`${API}/api/auth/login`,user)
+      if(respons.status == 200){
+        storeTokenInLS(respons?.data.token);
         setUser({ email: "", password: "" });
         toast.success("login successful");
-        // console.log(res_data);
         navigate("/")
-      } else {
-        toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
+        
+      }else{
+        toast.error(respons?.data.extraDetails ? respons?.data.extraDetails : respons?.data.message);
         console.log("invalid credential");
       }
+      // const response = await fetch(`${API}/api/auth/login`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(user),
+      // });
+      // console.log("login data : ", response);
+
+      // const res_data = await response.json();
+      // if (response.ok) {
+      //   // alert("Login successful");
+      //   // localStorage.setItem("token", res_data.token);
+      //   storeTokenInLS(res_data.token);
+      //   setUser({ email: "", password: "" });
+      //   toast.success("login successful");
+      //   // console.log(res_data);
+      //   navigate("/")
+      // } else {
+      //   toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
+      //   console.log("invalid credential");
+      // }
     } catch (error) {
       console.error("Error", error);
     }
