@@ -22,7 +22,7 @@ const corsOptions = {
     callback(null, isAllowed ? origin : false );
   },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
-  credentials: include,
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
