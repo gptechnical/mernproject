@@ -50,6 +50,8 @@ app.get("/", async (req, res) => {
 });
 
 
+
+
 // app.use(cors());
 
 app.use("/api/auth", authRoute);
