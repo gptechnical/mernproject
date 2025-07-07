@@ -27,7 +27,7 @@ const corsOptions = {
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:4173",
-  "https://www.codegptech.shop/",
+  "https://www.codegptech.shop",
 ];
 
 // Use the cors middleware with specific options
