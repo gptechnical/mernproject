@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
 export const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
