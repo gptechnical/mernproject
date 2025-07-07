@@ -46,7 +46,7 @@ app.use(
 );
 
 app.get("/", async (req, res) => {
-  return res.status(200).send("Welcometo CodeGPT");
+  return res.status(200).send("Welcome to CodeGPT(developer");
 });
 
 
