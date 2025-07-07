@@ -10,40 +10,31 @@ const serviceRoute = require("./router/service-router");
 const adminRoute = require("./router/admin-router");
 
 app.use(express.json());
-const corsOptions = {
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      "http://localhost:5173/",
-      "https://codegptech.shop/",
-      "https://www.codegptech.shop/",
-    ];
-    const isAllowed = allowedOrigins.includes(origin);
-    callback(null, isAllowed ? origin : false );
-  },
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true,
-};
-
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:4173",
+  "https://codegptech.shop",
   "https://www.codegptech.shop",
 ];
 
-// Use the cors middleware with specific options
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        // callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["POST", "GET", "PUT", "PATCH", "REQUEST", "DELETE"],
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url} from ${req.headers.origin}`);
+  next();
+});
 
 app.get("/", async (req, res) => {
   return res.status(200).send("Welcome to CodeGPT(developer");
