@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios'
 
 const Login = () => {
+  const API = import.meta.env.VITE_APP_URI_API;
   const [showPassowrd, setShowPassword] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -16,7 +17,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { storeTokenInLS, API } = useAuth();
+  const { storeTokenInLS } = useAuth();
 
   const handleInput = (e) => {
     let name = e.target.name;
@@ -33,7 +34,7 @@ const Login = () => {
     console.log(user);
 
     try {
-      const respons = await axios.post(`http://localhost:5001/api/auth/login`,user)
+      const respons = await axios.post(`${API}/api/auth/login`,user)
       if(respons.status == 200){
         storeTokenInLS(respons?.data.token);
         setUser({ email: "", password: "" });
