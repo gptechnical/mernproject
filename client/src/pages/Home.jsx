@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
+import { TypeAnimation } from 'react-type-animation';
 
 
 const Container = styled.div`
@@ -79,6 +79,22 @@ const Home = () => {
     <Container>
         <DivLeft>
             <h2>WELCOME TO CODEGPTECH</h2>
+          <TypeAnimation
+              sequence={[ 
+                'I Am Software Developer',
+                1000, 
+                'I Am Frontend Developer',
+                1000,
+                'I Am ReactJs Developer',
+                1000,
+                'I Am NodeJs Developer',
+                1000
+              ]}
+              wrapper="span"
+              speed={50}
+              style={{ fontSize: '1.7em', display: 'inline-block', color: "#764BA2", fontWeight: "700" }}
+              repeat={Infinity}
+            />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                Molestias officia, earum libero laborum nesciunt, 
                cumque pariatur adipisci, quos eaque exercitationem ipsum! 
