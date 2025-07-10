@@ -51,14 +51,20 @@ const DivLeft = styled.div`
   h2 {
     font-weight: 600;
   }
+  .type_animate{
+    font-size: 28px;
+    }
   @media (max-width: 768px) {
      h2{
       font-size: 22px;
      }
      p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.1;
      }
+      .type_animate{
+    font-size: 20px;
+    }
   }
   @media (max-width: 425px) {
     h2{
@@ -80,9 +86,14 @@ const DivRight = styled.div`
   img{
     width: 400px;
   }
-    @media (max-width: 425px) {
+    @media (max-width: 768px) {
    img {
    width: 300px;
+   }
+  }
+  @media (max-width: 425px) {
+   img {
+   width: 250px;
    }
   }
 `;
@@ -91,6 +102,9 @@ const HeadTwo = styled.h3`
    font-family: 'Inter', sans-serif;
    font-weight: 700;
    color: #ffffff;
+   @media (max-width: 768px) {
+  font-size: 15px;
+  }
 `;
 
 const Home = () => {
@@ -112,12 +126,12 @@ const Home = () => {
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: '1.7em', display: 'inline-block', 
+              style={{ display: 'inline-block', 
                 color: "#ffc700", fontWeight: "700", 
                 fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", 
                 marginTop: "5px" }}
               repeat={Infinity}
-            />
+           className='type_animate' />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                Molestias officia, earum libero laborum nesciunt, 
                cumque pariatur adipisci, quos eaque exercitationem ipsum! 
