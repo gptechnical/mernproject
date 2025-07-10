@@ -17,9 +17,9 @@ const Main = styled.div`
 `;
 
 const MobileViewAppBar = styled.div`
-  background-color: #c9c9c94f;
+  background-color: #673ab7;
   width: 100%;
-  padding: 0px 20px;
+  padding: 10px 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ const MobileViewAppBar = styled.div`
   }
 `;
 const Logo = styled.img`
-  width: 60px;
+  width: 150px;
 `;
 const SmallDeviceLinkView = styled.div`
   background-color: #fff;
@@ -70,9 +70,8 @@ const Link = styled.div`
 `;
 
 const Navigation = styled.div`
-  background-color: #c9c9c94f;
+  background-color: #673ab7;
   width: 100%;
-  justify-content: flex-start;
   margin-right: 80px;
   display: flex;
   align-items: center;
@@ -101,7 +100,7 @@ const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 150px;
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   font-family: sans-serif;
 `;
@@ -149,7 +148,7 @@ const IconWrapper = styled.span`
 const List = styled.div`
   font-size: 14px;
   display: flex;
-  align-items: center;
+  align-items: center;s
   padding: 15px;
   :hover {
     background-color: #c75dfe;
@@ -161,7 +160,7 @@ const List = styled.div`
 `;
 const Image = styled.img`
   cursor: pointer;
-  width: 150px;
+  width: 270px;
 `;
 
 const Navbar = () => {
@@ -176,7 +175,7 @@ const Navbar = () => {
       <Navigation>
         <Image
           src="/logo.png"
-          style={{ paddingLeft: "5rem" }}
+          style={{ paddingLeft: "5rem"}}
           onClick={() => {
             navigation("/");
           }}
@@ -252,7 +251,7 @@ const Navbar = () => {
             navigation("/");
           }}
         />
-        <IoMenu
+        <IoMenu style={{color:"#ffffff", fontSize: "30px"}}
           onClick={() => {
             setShowNavigation(!showNavigation);
           }}
@@ -351,8 +350,19 @@ const Navbar = () => {
             }}
           >
             Contact Us
+          </Link>
+          { isLoggedIn ? (
+            <Link
+            onClick={() => {
+              navigation("/logout");
+              setShowNavigation(!showNavigation);
+            }}
+          >
+            Logout
           </Link> 
-          <Link
+          ) : (
+            <>
+           <Link
             onClick={() => {
               navigation("/register");
               setShowNavigation(!showNavigation);
@@ -368,6 +378,9 @@ const Navbar = () => {
           >
             Login
           </Link>  
+          </>
+          )} 
+         
         </SmallDeviceLinkView>
       )}
     </Main>

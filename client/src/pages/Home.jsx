@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
+  background-color: #000000;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -11,6 +13,7 @@ const Container = styled.div`
   height: 100vh;
   @media (max-width: 425px) {
     grid-template-columns: 1fr;
+    height: 100%;
   }
 `;
 
@@ -28,16 +31,22 @@ const DivLeft = styled.div`
     padding-right: 25px;
   }
   p{
-    font-size: 20px;
-    line-height: 1.3;
+    font-size: 18px;
+    line-height: 1.4;
     margin-top: 10px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
   } 
   .btn_text {
-    background-color: #ffd900;
-    color: #000000;
-    padding: 7px 20px;
+    background-color: #673ab7;
+    color:rgb(255, 255, 255);
+    padding: 8px 30px;
     font-weight: 900;
     margin-top: 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
   }
   h2 {
     font-weight: 600;
@@ -57,6 +66,7 @@ const DivLeft = styled.div`
     }
     p{
       font-size: 16px;
+      line-height: 1.2;
     }
   }
 `;
@@ -66,11 +76,21 @@ const DivRight = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  clip-path: circle();
+  text-align: center;
   img{
-    width: 75%;
+    width: 400px;
   }
+    @media (max-width: 425px) {
+   img {
+   width: 300px;
+   }
+  }
+`;
 
+const HeadTwo = styled.h3`
+   font-family: 'Inter', sans-serif;
+   font-weight: 700;
+   color: #ffffff;
 `;
 
 const Home = () => {
@@ -78,21 +98,24 @@ const Home = () => {
     <>
     <Container>
         <DivLeft>
-            <h2>WELCOME TO CODEGPTECH</h2>
+            <HeadTwo>WELCOME TO CODEGPTECH</HeadTwo>
           <TypeAnimation
               sequence={[ 
-                'I Am Software Developer',
+                'I am a Software Developer',
                 1000, 
-                'I Am Frontend Developer',
+                'I am a Frontend Developer',
                 1000,
-                'I Am ReactJs Developer',
+                'I am a ReactJs Developer',
                 1000,
-                'I Am NodeJs Developer',
+                'I am a NextJs Developer',
                 1000
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: '1.7em', display: 'inline-block', color: "#764BA2", fontWeight: "700" }}
+              style={{ fontSize: '1.7em', display: 'inline-block', 
+                color: "#ffc700", fontWeight: "700", 
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", 
+                marginTop: "5px" }}
               repeat={Infinity}
             />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -100,10 +123,11 @@ const Home = () => {
                cumque pariatur adipisci, quos eaque exercitationem ipsum! 
                Provident adipisci quos animi ratione 
                dicta veritatis molestias ducimus.</p>
-             <button className='btn_text'>CONTACT ME</button>
+           <Link to="/contact"><button className='btn_text'>CONTACT ME</button></Link>
+              
         </DivLeft>
         <DivRight>
-              <img src="./laptop.jpeg" alt=""/>
+              <img src="./laptop.png" alt=""/>
         </DivRight>
     </Container>
     </>
