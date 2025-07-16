@@ -1,5 +1,4 @@
 import Counts from './Counts';
-import Footer from './Footer';
 import CarouselWithVideo from './VideoCarousel';
 
 const Home = () => {
@@ -7,7 +6,6 @@ const Home = () => {
     <>
     <CarouselWithVideo/>
     <Counts/>
-    <Footer/>
     </>
   )
 }
