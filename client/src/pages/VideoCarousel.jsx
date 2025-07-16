@@ -8,11 +8,13 @@ const VideoCarousel = () => {
   return (
     <div className="carousel-container">
       <Carousel
-        showThumbs={false}
+       autoPlay
         infiniteLoop
-        autoPlay={true}
+        showThumbs={false}
         showStatus={false}
         interval={5000}
+        stopOnHover={false}
+        swipeable={true}
       >
         {/* Slide 1 */}
         <div className="carousel-slide">
