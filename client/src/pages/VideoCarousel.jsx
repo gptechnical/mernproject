@@ -1,41 +1,48 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import '../assets/css/VideoCarousel.css';
+import React from 'react'
 
 const VideoCarousel = () => {
   return (
-    <div className="carousel-container">
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showThumbs={false}
-        showStatus={false}
-        interval={5000}
-        stopOnHover={false}
-      >
-        {/* Slide 1 */}
-        <div className="carousel-slide" style={{ backgroundImage: `url('/image1.jpg')` }}>
-          <div className="image-overlay" />
-          <div className="slide-content">
-            <h2>Stunning Designs</h2>
-            <p>Make your web presence stand out.</p>
-            <button>Learn More</button>
-          </div>
-        </div>
-
-        {/* Slide 2 */}
-        <div className="carousel-slide" style={{ backgroundImage: `url('/image2.jpg')` }}>
-          <div className="image-overlay" />
-          <div className="slide-content">
-            <h2>Clean & Modern</h2>
-            <p>Responsive layouts for every device.</p>
-            <button>Explore Now</button>
-          </div>
-        </div>
-      </Carousel>
+    <>
+      <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/lapi.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
     </div>
-  );
-};
+    <div class="carousel-item">
+      <img src="lapii.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="lapi.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </>
+  )
+}
 
-export default VideoCarousel;
+export default VideoCarousel
