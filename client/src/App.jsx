@@ -13,6 +13,7 @@ import AdminLayout from './components/layouts/AdminLayout';
 import AdminUsers from './pages/AdminUsers';
 import AdminContacts from './pages/AdminContacts';
 import AdminUpdate from './pages/AdminUpdate';
+import Footer from './pages/Footer';
 
 const App = () => {
   const [showDropDown, setShowDropDown] = useState(false);  
@@ -45,6 +46,7 @@ const App = () => {
               <Route path='users/:id/edit' element={<AdminUpdate/>}/>
             </Route>
          </Routes>
+         <Footer/>
       </BrowserRouter>
     </>
   )
