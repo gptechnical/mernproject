@@ -1,6 +1,8 @@
 import "../assets/css/VideoCarousel.css";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
+import { FaCircleChevronLeft } from "react-icons/fa6";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 const VideoCarousel = () => {
   return (
@@ -88,11 +90,11 @@ const VideoCarousel = () => {
         </div>
 
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span><FaCircleChevronLeft style={{fontSize: "30px"}}/></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span><FaCircleChevronRight style={{fontSize: "30px"}}/></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
