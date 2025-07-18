@@ -9,8 +9,8 @@ import { useAuth } from "../store/auth";
 
 const Main = styled.div`
   padding-bottom: 0px;
-  width: 100vw;
-  position: fixed;
+  // width: 100vw;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 5;

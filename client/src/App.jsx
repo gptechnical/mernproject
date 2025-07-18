@@ -14,6 +14,7 @@ import AdminUsers from './pages/AdminUsers';
 import AdminContacts from './pages/AdminContacts';
 import AdminUpdate from './pages/AdminUpdate';
 import Footer from './pages/Footer';
+import Header from './components/Header';
 
 const App = () => {
   const [showDropDown, setShowDropDown] = useState(false);  
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Header/>
       <Navbar
           showDropDown={showDropDown}
           setShowDropDown={setShowDropDown}
