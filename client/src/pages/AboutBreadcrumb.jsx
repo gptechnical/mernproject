@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import AboutTopImg from '../assets/images/about.jpg';
 import { IoHome } from "react-icons/io5";
@@ -6,17 +5,16 @@ import { FaAngleRight } from "react-icons/fa";
 import { CgFormatSlash } from "react-icons/cg";
 
 
-
 const AboutBreadcrumb = () => {
   return (
-    <div className="breadcrumb-area bg-gradient text-center position-relative" style={{ overflow: 'hidden', height: "300px"}}>
-      {/* Background Image */}
+    <div className="breadcrumb-area bg-gradient text-center position-relative" 
+      style={{ overflow: 'hidden', height: "50vh"}}>
       <div
         // className="fixed-bg"
         style={{
           backgroundImage: `url(${AboutTopImg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center', 
           backgroundRepeat: 'no-repeat',
           position: 'absolute',
           top: 0,

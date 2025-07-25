@@ -1,10 +1,10 @@
 import Counts from './Counts';
-import CarouselWithVideo from './VideoCarousel';
+import ImageBanner from './ImageBanner';
 
 const Home = () => {
   return (
     <>
-    <CarouselWithVideo/>
+    <ImageBanner/>
     <Counts/>
     </>
   )
