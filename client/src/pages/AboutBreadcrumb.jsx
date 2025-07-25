@@ -34,13 +34,13 @@ const AboutBreadcrumb = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // adjust opacity/color
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
           zIndex: 2,
         }}
       ></div>
 
       {/* Content */}
-      <div className="container position-relative" style={{ zIndex: 3, marginTop: "80px" }}>
+      <div className="container position-relative" style={{ zIndex: 3, marginTop: "100px" }}>
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
             <h1 className="text-white fw-bolder">About Us</h1>

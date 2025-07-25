@@ -1,4 +1,5 @@
 import AboutBreadcrumb from "./AboutBreadcrumb"
+import AboutUs from "./AboutUs"
 
 
 const About = () => {
@@ -6,7 +7,7 @@ const About = () => {
   return (
     <>
     <AboutBreadcrumb/>
-   
+    <AboutUs/>
     </>
   )
 }
