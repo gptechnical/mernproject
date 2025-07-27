@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-   margin-top: 90px;
+   margin-top: 0px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -49,12 +49,13 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   margin-top: 20px;
-  padding: 4px 30px;
+  padding: 4px 20px;
   font-size: 18px;
   font-weight: 600;
-  background-color: #ffffff00;
+  background-color: #ffffff;
   border: 1px solid #ffffff66;
-  color: #FFA500;
+  color: #000000;
+  border-radius: 20px;
   cursor: pointer;
   &:hover {
    background-color: #ffffff;

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import { IoMenu } from "react-icons/io5";
@@ -11,13 +10,13 @@ const Main = styled.div`
   padding-bottom: 0px;
   // width: 100vw;
   position: sticky;
-  top: 0;
+  top: 0;s
   left: 0;
   z-index: 5;
 `;
 
 const MobileViewAppBar = styled.div`
-  background-color: #673ab7;
+  background-color: #000a2d;
   width: 100%;
   padding: 10px 20px;
   position: relative;
@@ -70,7 +69,7 @@ const Link = styled.div`
 `;
 
 const Navigation = styled.div`
-  background-color: #673ab7;
+  background-color: #000a2d;
   width: 100%;
   margin-right: 80px;
   display: flex;

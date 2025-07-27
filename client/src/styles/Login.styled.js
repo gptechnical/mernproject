@@ -25,7 +25,7 @@ const formboder = keyframes`
 `;
 
 export const Section = styled.section`
-   margin-top: 90px;
+   margin-top: 30px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -79,9 +79,10 @@ export const Button = styled.button`
   padding: 4px 30px;
   font-size: 18px;
   font-weight: 600;
-  background-color: #ffffff00;
+  background-color: #ffffff;
   border: 1px solid #ffffff66;
-  color: #FFA500;
+  color: #000000;
+  border-radius: 20px;
   cursor: pointer;
   &:hover {
    background-color: #ffffff;

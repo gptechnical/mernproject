@@ -8,7 +8,7 @@ const AboutUs = () => {
         <div className="row align-items-center justify-content-center">
           {/* Column 1: Text */}
           <div className="col-md-6">
-            <h2 style={{ fontWeight: "700", color: "#673ab7" }}>About Us</h2>
+            <h2 style={{ fontWeight: "700", color: "#000a2d" }}>About Us</h2>
             <p style={{ fontSize: "18px", fontWeight: "600" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Aliquid placeat error quae, doloremque soluta blanditiis velit, 
