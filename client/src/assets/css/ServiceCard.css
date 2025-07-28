@@ -1,0 +1,16 @@
+.card_bg {
+    background-color: #000a2d;
+    padding: 10px;
+}
+.icon_col {
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid #ffffff;
+}
+.btn_read {
+    padding: 4px 20px;
+    background-color: #ffc700;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+}

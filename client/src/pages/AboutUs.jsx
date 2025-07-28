@@ -9,13 +9,13 @@ const AboutUs = () => {
           {/* Column 1: Text */}
           <div className="col-md-6">
             <h2 style={{ fontWeight: "700", color: "#000a2d" }}>About Us</h2>
-            <p style={{ fontSize: "18px", fontWeight: "600" }}>
+            <p style={{ fontSize: "18px", fontWeight: "500" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Aliquid placeat error quae, doloremque soluta blanditiis velit, 
               incidunt obcaecati tenetur natus dolorum magnam beatae. Iusto, 
               omnis tempore nobis voluptatum expedita pariatur.
             </p>
-            <p style={{ fontSize: "18px", fontWeight: "600" }}>
+            <p style={{ fontSize: "18px", fontWeight: "500" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Aliquid placeat error quae, doloremque soluta blanditiis velit, 
               incidunt obcaecati tenetur natus dolorum magnam beatae. Iusto, 
