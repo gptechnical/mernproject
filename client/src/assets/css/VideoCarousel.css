@@ -5,11 +5,12 @@
 .head {
   color: #ffffff;
   font-weight: 700;
+  font-size: 60px;
 }
 .para {
   color: #ffffff;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 25px;
 }
 @media (max-width: 425px){
   .img_res {
@@ -24,4 +25,45 @@
   .box_cont{
     height: 90vh;
   }
+  .head{
+    font-size: 25px;
+  }
+}
+
+ .ImageAnimation {
+      animation-name: myImageAnimation;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes myImageAnimation {
+      0% {
+        transform: translateX(0); /* Start position */
+      }
+      50% {
+        transform: translateX(40px); /* Mid-point position */
+      }
+      100% {
+        transform: translateX(0); /* End position, back to start */
+      }
+    }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.cont_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }

@@ -35,7 +35,7 @@ const MobileViewAppBar = styled.div`
   }
 `;
 const Logo = styled.img`
-  width: 150px;
+  width: 80px;
 `;
 const SmallDeviceLinkView = styled.div`
   background-color: #fff;
@@ -100,12 +100,12 @@ const NavWrapper = styled.div`
   align-items: center;
   margin-right: 150px;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
   font-family: sans-serif;
 `;
 const NavLink = styled.div`
   margin-left: 25px;
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   display: flex;
   cursor: pointer;
@@ -159,7 +159,7 @@ const List = styled.div`
 `;
 const Image = styled.img`
   cursor: pointer;
-  width: 270px;
+  width: 150px;
 `;
 
 const Navbar = () => {
@@ -173,7 +173,7 @@ const Navbar = () => {
     <Main>
       <Navigation>
         <Image
-          src="/logo.png"
+          src="/logocoder.png"
           style={{ paddingLeft: "5rem"}}
           onClick={() => {
             navigation("/");
@@ -245,7 +245,7 @@ const Navbar = () => {
       </Navigation>
       <MobileViewAppBar>
         <Logo
-          src="/logo.png"
+          src="/logocoder.png"
           onClick={() => {
             navigation("/");
           }}

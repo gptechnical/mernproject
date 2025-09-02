@@ -1,5 +1,5 @@
 .card_bg {
-    background-color: #000a2d;
+    background-color: #ffffff;
     padding: 10px;
 }
 .icon_col {
@@ -13,4 +13,5 @@
     border-radius: 20px;
     border: none;
     font-weight: 600;
+    color: #000000;
 }
