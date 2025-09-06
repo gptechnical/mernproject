@@ -3,3 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
+@media (max-width: 425px) {
+  .whatsapp_widget_icon {
+  margin-right: 20px !important;
+}
+}

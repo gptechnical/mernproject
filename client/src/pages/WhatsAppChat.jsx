@@ -1,3 +1,4 @@
+
 import WhatsAppWidget from "react-whatsapp-chat-widget";
 import "react-whatsapp-chat-widget/index.css";
 
@@ -12,7 +13,7 @@ const WhatsAppChat = () => {
       autoOpenTimer={5000}
       messageBox={true}
       messageBoxTxt=""
-      iconSize="50"
+      iconSize="40"
       iconColor="white"
       iconBgColor="#01a514"
       headerIcon="logocod.png"
