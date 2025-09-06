@@ -4,7 +4,16 @@
   box-sizing: border-box;
 }
 @media (max-width: 425px) {
-  .whatsapp_widget_icon {
-  margin-right: 20px !important;
+  /* .whatsapp_widget_icon {
+  margin-right: 40px !important;
+} */
+.whatsapp-widget-wrapper {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
+}
+
+.rcw-conversation-container {
+  max-width: 100% !important;
+  width: 100% !important;
 }
