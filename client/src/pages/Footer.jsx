@@ -1,4 +1,4 @@
-import { FaPhone } from "react-icons/fa6";
+import { FiPhoneCall } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import FooterImg from "../assets/images/footer.jpg";
@@ -111,12 +111,12 @@ const Footer = () => {
             <ul className="list-unstyled" style={{ lineHeight: "2" }}>
               <li>
                 <a href="tel:+917906923266" className="text-light text-decoration-none fw-semibold">
-                  <FaPhone style={{ fontSize: "20px" }} /> +91-7906923266
+                  <FiPhoneCall style={{ fontSize: "20px" }} /> +91-7906923266
                 </a>
               </li>
               <li>
                 <a href="mailto:gptech015@gmail.com" className="text-light text-decoration-none fw-semibold">
-                  <CgMail style={{ fontSize: "30px" }} /> gptech015@gmail.com
+                  <CgMail style={{ fontSize: "20px" }} /> gptech015@gmail.com
                 </a>
               </li>
             </ul>

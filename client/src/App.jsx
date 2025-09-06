@@ -15,6 +15,7 @@ import AdminContacts from './pages/AdminContacts';
 import AdminUpdate from './pages/AdminUpdate';
 import Footer from './pages/Footer';
 import Header from './components/Header';
+import WhatsAppChat from './pages/WhatsAppChat';
 
 const App = () => {
   const [showDropDown, setShowDropDown] = useState(false);  
@@ -49,6 +50,7 @@ const App = () => {
             </Route>
          </Routes>
          <Footer/>
+         <WhatsAppChat/>
       </BrowserRouter>
     </>
   )

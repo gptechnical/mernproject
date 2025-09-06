@@ -13,11 +13,11 @@ const ServiceCard = () => {
     </div> */}
 
     <div className="container">
-      <div className="row">
+      <div className="row g-5">
         {services.map((curElem, index) => (
-          <div className="col-12 col-sm-6 col-lg-4 mb-4" key={index}>
+          <div className="col-12 col-sm-6 col-lg-4" key={index}>
             <div className="card h-100 shadow-sm card_bg">
-              <div className="card-img-top text-center mt-3">
+              <div className="card-img-top text-center">
                 {/* <img src="/service.jpg" alt="service" width="200" /> */}
                 <img src={curElem.image} className="icon_col" alt="" style={{backgroundColor: "#000a2d"}}/>
               </div>

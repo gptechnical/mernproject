@@ -1,4 +1,4 @@
-import AboutImg from '../assets/images/aboutus.jpg';
+import AboutImg from '../assets/images/About.png';
 import "../assets/css/AboutUs.css";
 
 const AboutUs = () => {

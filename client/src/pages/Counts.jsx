@@ -48,25 +48,25 @@ const Counts = () => {
             <div className="container position-relative" style={{ zIndex: 3 }}>
                 <div className="row">
                     <div className="col-lg-3 col-6 text-center">
-                        <span style={{ color: "#ffa700", fontSize: "40px", fontWeight: "700" }}>
+                        <span style={{ color: "#ff8429", fontSize: "40px", fontWeight: "700" }}>
                             <Counters initialValue={1} targetValue={3} autoPlayInterval={220} symbol="+" />
                         </span>
                         <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Years of Experience</p>
                     </div>
                     <div className="col-lg-3 col-6 text-center">
-                        <span style={{ color: "#ffa700", fontSize: "40px", fontWeight: "700" }}>
+                        <span style={{ color: "#ff8429", fontSize: "40px", fontWeight: "700" }}>
                             <Counters initialValue={1} targetValue={15} autoPlayInterval={80} />
                         </span>
                         <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Project delivered</p>
                     </div>
                     <div className="col-lg-3 col-6 text-center">
-                        <span style={{ color: "#ffa700", fontSize: "40px", fontWeight: "700" }}>
+                        <span style={{ color: "#ff8429", fontSize: "40px", fontWeight: "700" }}>
                             <Counters initialValue={1} targetValue={350} autoPlayInterval={10} />
                         </span>
                         <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Happy client</p>
                     </div>
                     <div className="col-lg-3 col-6 text-center">
-                        <span style={{ color: "#ffa700", fontSize: "40px", fontWeight: "700" }}>
+                        <span style={{ color: "#ff8429", fontSize: "40px", fontWeight: "700" }}>
                             <Counters initialValue={1} targetValue={250} autoPlayInterval={10} />
                         </span>
                         <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Coffee</p>
