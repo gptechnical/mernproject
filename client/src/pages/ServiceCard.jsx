@@ -13,7 +13,7 @@ const ServiceCard = () => {
     </div> */}
 
     <div className="container">
-      <div className="row g-5">
+      <div className="row g-3">
         {services.map((curElem, index) => (
           <div className="col-12 col-sm-6 col-lg-4" key={index}>
             <div className="card h-100 shadow-sm card_bg">
