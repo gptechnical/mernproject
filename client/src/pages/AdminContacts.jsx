@@ -4,9 +4,12 @@ import { toast } from "react-toastify";
 
 const AdminContacts = () => {
   const [contactData, setContactData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const contactsPerPage = 10;
+
   const { AuthorizationToken, API } = useAuth();
 
-  // Fetch contacts
+  // Fetch contacts — return the fetched array so callers can react immediately
   const getContactsData = async () => {
     try {
       const response = await fetch(`${API}/api/admin/contacts`, {
@@ -18,16 +21,19 @@ const AdminContacts = () => {
       const data = await response.json();
       if (response.ok) {
         setContactData(data);
+        return data;
       } else {
         toast.error("Failed to load contacts");
+        return [];
       }
     } catch (error) {
       console.log(error);
       toast.error("Error fetching contacts");
+      return [];
     }
   };
 
-  // Delete contact
+  // Delete contact — refetch and ensure page index remains valid
   const deleteContact = async (id) => {
     try {
       const response = await fetch(`${API}/api/admin/contacts/delete/${id}`, {
@@ -37,7 +43,10 @@ const AdminContacts = () => {
         },
       });
       if (response.ok) {
-        getContactsData();
+        const newData = await getContactsData();
+        // ensure currentPage is not greater than the new total pages
+        const totalPages = Math.max(1, Math.ceil(newData.length / contactsPerPage));
+        setCurrentPage((prev) => Math.min(prev, totalPages));
         toast.success("Deleted successfully");
       } else {
         toast.error("Not Deleted");
@@ -49,18 +58,29 @@ const AdminContacts = () => {
   };
 
   useEffect(() => {
+    // initial load
     getContactsData();
   }, []);
 
+  // Pagination calculations
+  const totalPages = Math.max(1, Math.ceil(contactData.length / contactsPerPage));
+  const indexOfFirst = (currentPage - 1) * contactsPerPage;
+  const currentContacts = contactData.slice(indexOfFirst, indexOfFirst + contactsPerPage);
+
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="container mt-2 mb-5">
+    <div className="container py-3">
       <h2 className="text-center mb-4 fw-bold">Admin Contacts</h2>
 
-      <div className="table-responsive shadow-sm rounded">
-        <table className="table table-hover align-middle text-center">
+      <div className="table-responsive shadow-sm rounded-3 bg-white">
+        <table className="table table-striped align-middle mb-0">
           <thead className="table-primary">
             <tr>
-              <th>#</th>
+              <th>Id</th>
               <th>Username</th>
               <th>Email</th>
               <th>Message</th>
@@ -68,13 +88,13 @@ const AdminContacts = () => {
             </tr>
           </thead>
           <tbody>
-            {contactData.length > 0 ? (
-              contactData.map((curContact, index) => {
+            {currentContacts.length > 0 ? (
+              currentContacts.map((curContact, idx) => {
                 const { username, email, message, _id } = curContact;
                 return (
                   <tr key={_id}>
-                    <td>{index + 1}</td>
-                    <td className="fw-semibold">{username}</td>
+                    <td>{indexOfFirst + idx + 1}</td>
+                    <td>{username}</td>
                     <td>{email}</td>
                     <td className="text-break">{message}</td>
                     <td>
@@ -98,6 +118,42 @@ const AdminContacts = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Pagination Controls */}
+      {contactData.length > contactsPerPage && (
+        <nav className="d-flex justify-content-center mt-4">
+          <ul className="pagination">
+            <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+              <button
+                className="page-link"
+                onClick={() => handlePageChange(currentPage - 1)}
+              >
+                Previous
+              </button>
+            </li>
+
+            {[...Array(totalPages)].map((_, i) => (
+              <li
+                key={i}
+                className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
+              >
+                <button className="page-link" onClick={() => handlePageChange(i + 1)}>
+                  {i + 1}
+                </button>
+              </li>
+            ))}
+
+            <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
+              <button
+                className="page-link"
+                onClick={() => handlePageChange(currentPage + 1)}
+              >
+                Next
+              </button>
+            </li>
+          </ul>
+        </nav>
+      )}
     </div>
   );
 };

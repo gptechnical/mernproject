@@ -6,6 +6,10 @@ const AdminUsers = () => {
   const { AuthorizationToken, API } = useAuth();
   const [users, setUsers] = useState([]);
 
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 10;
+
   const getAllUsersData = async () => {
     try {
       const response = await fetch(`${API}/api/admin/users`, {
@@ -41,8 +45,18 @@ const AdminUsers = () => {
     getAllUsersData();
   }, []);
 
+  // Pagination Logic
+  const totalPages = Math.ceil(users.length / usersPerPage);
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
-    <div className="container py-2">
+    <div className="container py-3">
       <h2 className="text-center mb-4 fw-bold">Admin Users</h2>
 
       <div className="table-responsive shadow-sm rounded-3 bg-white">
@@ -58,8 +72,8 @@ const AdminUsers = () => {
           </thead>
 
           <tbody>
-            {users.length > 0 ? (
-              users.map((user, index) => (
+            {currentUsers.length > 0 ? (
+              currentUsers.map((user, index) => (
                 <tr key={index} className="text-center">
                   <td>{user.username}</td>
                   <td>{user.email}</td>
@@ -92,6 +106,49 @@ const AdminUsers = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <nav className="d-flex justify-content-center mt-4">
+          <ul className="pagination">
+            <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+              <button
+                className="page-link"
+                onClick={() => handlePageChange(currentPage - 1)}
+              >
+                Previous
+              </button>
+            </li>
+
+            {[...Array(totalPages)].map((_, i) => (
+              <li
+                key={i}
+                className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => handlePageChange(i + 1)}
+                >
+                  {i + 1}
+                </button>
+              </li>
+            ))}
+
+            <li
+              className={`page-item ${
+                currentPage === totalPages ? "disabled" : ""
+              }`}
+            >
+              <button
+                className="page-link"
+                onClick={() => handlePageChange(currentPage + 1)}
+              >
+                Next
+              </button>
+            </li>
+          </ul>
+        </nav>
+      )}
     </div>
   );
 };

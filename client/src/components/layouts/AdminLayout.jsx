@@ -71,23 +71,23 @@ const AdminLayout = () => {
   return (
     <div className="admin-layout">
       {/* Mobile top bar (only on small screens) */}
-      <nav className="navbar navbar-dark bg-dark d-md-none">
+      <nav className="navbar navbar-dark d-md-none" style={{backgroundColor: "#cfe2ff"}}>
         <div className="container-fluid">
           <button
-            className="btn btn-outline-light"
+            className="btn btn-outline-black"
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
           >
             <i className="bi bi-list fs-4" />
           </button>
-          <span className="navbar-brand ms-2">Admin Panel</span>
+          <span className="navbar-brand text-black ms-2">Admin Panel</span>
         </div>
       </nav>
 
       <div className="container-fluid">
         <div className="row flex-nowrap">
           {/* Desktop sidebar (visible md+) */}
-          <aside className="col-md-3 col-xl-2 px-sm-2 px-0 sidebar d-none d-md-flex flex-column align-items-center align-items-sm-start min-vh-100 text-white">
+          <aside className="col-md-3 col-xl-2 px-sm-2 px-0 sidebar d-none d-md-flex flex-column align-items-center align-items-sm-start min-vh-100">
             <h2 className="fs-4 mb-3 mt-3 text-center w-100">Admin Panel</h2>
             <SidebarLinks />
           </aside>
@@ -96,8 +96,8 @@ const AdminLayout = () => {
           <div className={`mobile-drawer bg-dark text-white ${drawerOpen ? "open" : ""}`}>
             <div className="drawer-inner p-3">
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5 className="m-0">Menu</h5>
-                <button className="btn-close btn-close-white" onClick={() => setDrawerOpen(false)} aria-label="Close" />
+                <h5 className="m-0 text-black">Menu</h5>
+                <button className="btn-close btn-close-black" onClick={() => setDrawerOpen(false)} aria-label="Close" />
               </div>
               <SidebarLinks onClick={() => setDrawerOpen(false)} />
             </div>
