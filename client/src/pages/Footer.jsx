@@ -10,7 +10,7 @@ import { FaLinkedin } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer
-      className="text-light py-4 mt-5 position-relative"
+      className="text-light py-4 position-relative"
       style={{
         backgroundImage: `url(${FooterImg})`, // your footer background image
         backgroundSize: "cover",
@@ -115,8 +115,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:gptech015@gmail.com" className="text-light text-decoration-none fw-semibold">
-                  <CgMail style={{ fontSize: "20px" }} /> gptech015@gmail.com
+                <a href="mailto:info@codegptech.shop" className="text-light text-decoration-none fw-semibold">
+                  <CgMail style={{ fontSize: "20px" }} /> info@codegptech.shop
+
                 </a>
               </li>
             </ul>

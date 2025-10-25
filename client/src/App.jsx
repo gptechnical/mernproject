@@ -52,7 +52,7 @@ const App = () => {
          <Footer/>
          <WhatsAppChat/>
       </BrowserRouter>
-    </>
+    </> 
   )
 }
 

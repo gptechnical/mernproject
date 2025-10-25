@@ -13,7 +13,7 @@ const Header = () => {
     <div class="col-md-6 col-lg-6">
         <ul className='d-flex mt-1' style={{listStyle: "none"}}>
             <li style={{fontSize: "1.1rem", fontWeight: "600"}}>
-                <MdEmail style={{color: "#000a2d"}}/> gptech015@gmail.com</li>&emsp;
+                <MdEmail style={{color: "#000a2d"}}/> info@codegptech.shop</li>&emsp;
             <li><a href="tel:+91-7906923266" 
             style={{fontSize: "1.1rem", fontWeight: "600", textDecoration: "none", color: "#000000"}}>
                 <FaSquarePhone style={{color: "#000a2d"}}/> +91-7906923266</a></li>

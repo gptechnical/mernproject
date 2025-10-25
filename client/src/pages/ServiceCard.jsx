@@ -7,7 +7,7 @@ const ServiceCard = () => {
   console.log("<<<<<<<", services)
   return (
     <>
-        <section className="section-services mt-5">
+        <section className="section-services mt-5 mb-5">
     {/* <div className="container mt-3">
       <h1 className="main-heading text-center mb-5 fw-bold">Our Services</h1>
     </div> */}
