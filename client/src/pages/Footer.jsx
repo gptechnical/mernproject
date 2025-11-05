@@ -21,10 +21,11 @@ const Footer = () => {
       {/* Overlay */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
-        style={{
-          backgroundColor: "rgba(0, 10, 45, 0.8)", // dark overlay
-          zIndex: -1,
-        }}
+       style={{
+        background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), linear-gradient(90deg, #0a1a3a, #002b64, #004b91)",
+        zIndex: -1,
+      }}
+
       ></div>
 
       <div className="container position-relative">

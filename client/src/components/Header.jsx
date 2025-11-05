@@ -21,7 +21,7 @@ const Header = () => {
     </div>
     <div class="col-md-6 col-lg-6">
         <ul className='d-flex gap-3 justify-content-center' style={{listStyle: "none"}}>
-            <li className='fw-semibold mt-1'>Open Hours of Company Mon - Fri: 9.00 am - 6.30 pm</li>
+            <li className='fw-semibold mt-1'>Open Hours of Company Mon - Sat: 9.00 am - 6.00 pm</li>
             <li><a href="https://www.facebook.com/share/1EXVyqzA6p/?mibextid=wwXIfr" style={{color: "#000a2d", fontSize: "1.3rem"}}><BsFacebook /></a></li>
             <li><a href="https://www.instagram.com/codegptech/" style={{color: "#000a2d", fontSize: "1.3rem"}}><BsInstagram /></a></li>
             <li><a href="#" style={{color: "#000a2d", fontSize: "1.3rem"}}><BsTwitterX /></a></li>
