@@ -37,7 +37,7 @@ const ImageBanner = () => {
       <div className="container h-100">
         <div className="row h-100 align-items-center">
           <div className="col-12 cont_center" style={{ zIndex: 1 }}>
-            <h2 className='head'>Welcome <span style={{color: "#ffc600"}}>to</span> codegptech</h2>
+            <h2 className='head'>Welcome <span style={{color: "#ff9219"}}>to</span> codegptech</h2>
             <p className='para'>
               High-Quality IT Services&nbsp;
               <TypeAnimation
@@ -55,7 +55,7 @@ const ImageBanner = () => {
                 speed={50}
                 style={{
                   display: 'inline-block',
-                  color: '#ffc700',
+                  color: '#ff9219',
                   fontWeight: '600',
                   fontFamily:
                     "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
@@ -65,15 +65,12 @@ const ImageBanner = () => {
               />
             </p>
             <Link to="/contact">
-              <button className="btn mt-3 fw-bold border text-white btn_text">
-                Contact Now
-              </button>
+              <button className="btn mt-3 fw-bold border-0 text-white btn_text">
+              Contact Now
+            </button>
+
             </Link>
           </div>
-
-          {/* <div className="col-md-6 text-center" style={{ zIndex: 1 }}>
-            <img src="./Developer.png" alt="Developer" className='img_res ImageAnimation'/>
-          </div> */}
         </div>
       </div>
     </div>

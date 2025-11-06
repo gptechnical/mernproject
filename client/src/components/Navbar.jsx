@@ -16,7 +16,7 @@ const Main = styled.div`
 `;
 
 const MobileViewAppBar = styled.div`
-  background: linear-gradient(90deg, #0a1a3a, #002b64, #004b91);
+  background: linear-gradient(135deg, rgb(58, 123, 213) 0%, rgb(100, 63, 201) 100%);
   width: 100%;
   padding: 10px 20px;
   position: relative;
@@ -69,7 +69,7 @@ const Link = styled.div`
 `;
 
 const Navigation = styled.div`
- background: linear-gradient(90deg, #0a1a3a, #002b64, #004b91);
+  background: linear-gradient(135deg, rgb(58, 123, 213) 0%, rgb(100, 63, 201) 100%);
   width: 100%;
   margin-right: 80px;
   display: flex;

@@ -22,7 +22,7 @@ const Footer = () => {
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
        style={{
-        background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), linear-gradient(90deg, #0a1a3a, #002b64, #004b91)",
+        background: "#000000b3",
         zIndex: -1,
       }}
 
