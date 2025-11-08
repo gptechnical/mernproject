@@ -17,7 +17,7 @@ const WhatsAppChat = () => {
       iconColor="white"
       iconBgColor="#01a514"
       headerIcon="logocod.png"
-      headerBgColor="#000a2d"
+      headerBgColor="#030507"
       headerTitle="codegptech"
       headerCaption="Online"
       bodyBgColor="#bbb"
@@ -29,7 +29,7 @@ const WhatsAppChat = () => {
       }
       footerBgColor="#999"
       placeholder="Type a message.."
-      btnBgColor="#000a2d"
+      btnBgColor="#030507"
       btnTextColor="#ffffff"
     />
   );

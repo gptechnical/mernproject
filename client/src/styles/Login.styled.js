@@ -1,134 +1,113 @@
-import styled, { keyframes } from "styled-components";
-
-
-const rotate = keyframes`
-   0% {
-        transform: perspective(400px) scaleX(1); 
-    }
-    100% {
-        transform: perspective(400px) scaleX(-1);
-    }
-`;
-
-const formboder = keyframes`
-    0% {
-      border-top-color:#ff5722;
- 
-    }
-    50% {
-      border-right-color:#FFA500;
-      
-    }
-    100% {
-      border-bottom-color:#ff5722;
-    }
-`;
+import styled from "styled-components";
 
 export const Section = styled.section`
-   margin-top: 30px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 `;
 
 export const Form = styled.form`
-   background-color:#000000;
-   padding: 30px 40px;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
-   border: 3px solid #ffffff;
-   box-sizing: border-box;
-   border-radius: 30px;
-   &:hover{
-   animation: ${formboder} 3s linear;
-   }
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+`;
 
-   .input_box {
-    font-size: 18px;
-    padding: 5px 25px 5px 0px;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    border-bottom: 2px solid #FFA500;
-    background-color:#000000;
-    width: 300px;
-    @media (max-width: 425px){
-     width: 250px;
-    }
-   }
+export const Img = styled.img`
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  border-radius: 50%;
 `;
 
 export const Label = styled.label`
-   color: #FFA500;
-   font-size: 20px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: 600;
+  font-size: 1rem;
+  color: #000000ff;
+  display: block;
+  margin: 10px 0 6px;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
 `;
 
 export const Input = styled.input`
-   &::placeholder {
-    color: #ffffff;
-   }
-`;
-
-export const Button = styled.button`
-  margin-top: 20px;
-  padding: 4px 30px;
-  font-size: 18px;
-  font-weight: 600;
+  width: 100%;
+  padding: 10px 40px; /* space for icons */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
   background-color: #ffffff;
-  border: 1px solid #ffffff66;
-  color: #000000;
-  border-radius: 20px;
-  cursor: pointer;
-  &:hover {
-   background-color: #ffffff;
-   color: #000000;
+  color: #000000ff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background-color: #ffffff;
+  }
+
+  &::placeholder {
+    color: #7a7a7a;
   }
 `;
 
 export const Span = styled.span`
-  color: #ffffff;
-  font-size: 20px;
   position: absolute;
-  top: 250px;
-  right: 42px;
+  top: 40%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #457b9d;
+  font-size: 1.5rem;
 `;
 
 export const SpanIcon = styled.span`
-   color: #ffffff;
-   font-size: 20px;
-   position: absolute;
-   top: 310px;
-   right: 42px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #457b9d;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1d3557;
+  }
 `;
 
-export const Img = styled.img`
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  padding: 2px;
-  animation: ${rotate} 3s linear infinite;
+export const Button = styled.button`
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #0d6efd;
+  }
+
+  &:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+  }
 `;
 
 export const Div = styled.div`
-  color: #ffffff;
-  display: flex;
-  gap: 60px;
-  margin-top: 10px;
- 
-  .forgot {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .remem{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  @media (max-width: 425px){
-  font-size: 12px;
-  font-weight: 600;
-}
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
 `;

@@ -1,73 +1,77 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-   margin-top: 0px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 `;
 
 export const Form = styled.form`
-   margin-top: 30px;
-   background-color:#000000;
-   line-height: 2;
-   padding: 30px 40px;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
-   border: 3px solid #ffffff;
-   border-radius: 30px;
-   .input_box {
-    font-size: 18px;
-    padding: 5px 25px 5px 0px;
-    border: none;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 400px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 30px 25px;
+  }
+
+  .input_box {
+    font-size: 16px;
+    padding: 12px 16px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
     outline: none;
-    color: #ffffff;
-    border-bottom: 2px solid #FFA500;
-    background-color:#000000;
-    width: 300px;
-    @media (max-width: 425px){
-     width: 250px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: #555;
     }
-   }
+  }
 `;
 
 export const Label = styled.label`
-   color: #FFA500;
-   font-size: 20px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+  margin-top: 15px;
 `;
 
-export const Input = styled.input`
-   &::placeholder {
-    color: #ffffff;
-   }
-`;
+export const Input = styled.input``;
 
 export const Button = styled.button`
-  margin-top: 20px;
-  padding: 4px 20px;
+  margin-top: 25px;
+  padding: 12px;
   font-size: 18px;
   font-weight: 600;
-  background-color: #ffffff;
-  border: 1px solid #ffffff66;
-  color: #000000;
-  border-radius: 20px;
+  background: #0d6efd;
+  border: none;
+  color: #ffffff;
+  border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
+
   &:hover {
-   background-color: #ffffff;
-   color: #000000;
+    background: #0d6efd;
+    color: #ffffff;
   }
 `;
 
 export const Heading = styled.h2`
-   color: #ffffff;
-   font-family: 'Lucida Sans', sans-serif;
-   font-size: 30px;
-   font-weight: 600;
+  text-align: center;
+  color: #0d6efd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
 `;
-
-

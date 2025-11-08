@@ -1,96 +1,131 @@
 import { useState } from 'react';
-import { Section, Form, Label, Input, Button, Span, SpanIcon, Img, Div} from '../styles/Login.styled';
+import { Section, Form, Label, Input, Button, Span, SpanIcon, Img, Div, InputWrapper } from '../styles/Login.styled';
 import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/auth';
 import { toast } from 'react-toastify';
-import axios from 'axios'
+import axios from 'axios';
 
 const Login = () => {
   const API = import.meta.env.VITE_APP_URI_API;
-  const [showPassowrd, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     email: "",
     password: ""
   });
 
-  const navigate = useNavigate();
+  const [errors, setErrors] = useState({
+    email: "",
+    password: ""
+  });
 
+  const navigate = useNavigate();
   const { storeTokenInLS } = useAuth();
 
   const handleInput = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-
-    setUser({
-      ...user,
-      [name]: value,
-    });
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+    setErrors({ ...errors, [name]: "" });
   };
- 
+
+  const validate = () => {
+    let newErrors = {};
+    let valid = true;
+
+    if (!user.email.trim()) {
+      newErrors.email = "Email is required.";
+      valid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(user.email)) {
+      newErrors.email = "Invalid email address.";
+      valid = false;
+    }
+
+    if (!user.password.trim()) {
+      newErrors.password = "Password is required.";
+      valid = false;
+    } else if (user.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
 
+    if (!validate()) {
+      toast.error("Please correct the errors before continuing.");
+      return;
+    }
+
+    setLoading(true);
     try {
-      const respons = await axios.post(`${API}/api/auth/login`,user)
-      if(respons.status == 200){
-        storeTokenInLS(respons?.data.token);
+      const response = await axios.post(`${API}/api/auth/login`, user);
+      if (response.status === 200) {
+        storeTokenInLS(response?.data.token);
+        toast.success("Login successful!");
         setUser({ email: "", password: "" });
-        toast.success("login successful");
-        navigate("/")
-        
-      }else{
-        toast.error(respons?.data.extraDetails ? respons?.data.extraDetails : respons?.data.message);
-        console.log("invalid credential");
+        navigate("/");
+      } else {
+        toast.error(response?.data.message || "Invalid credentials");
       }
     } catch (error) {
-      console.error("Error", error);
+      toast.error("Login failed! Check your credentials.");
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
- 
   };
 
-  const handleEye = () =>{
-    setShowPassword(!showPassowrd);
-  }
+  const handleEye = () => setShowPassword(!showPassword);
 
   return (
-    <>
-       <Section>
-                <Form>
-                  <Img src="./profile.png" alt="profile"/>
-                    <Label htmlFor="email">Email</Label>
-                    <Span><MdEmail/></Span>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={user.email}
-                      onChange={handleInput}
-                      placeholder="Email"
-                      className='input_box'
-                      />
-                    <Label htmlFor="password">Password</Label>
-              
-                    <SpanIcon onClick={handleEye}>
-                       {showPassowrd ? <BsEyeFill /> : <BsEyeSlash />}
-                    </SpanIcon>
-                    <Input
-                      type={showPassowrd ? "text" : "password"}
-                      name="password"
-                      value={user.password}
-                      onChange={handleInput}
-                      placeholder="Password"
-                      className='input_box'
-                    />
-                 
-                   <Button onClick={handleSubmit}>
-                    Login
-                  </Button>
-                </Form>
-      </Section>
-    </>
-  )
-}
+    <Section>
+      <Form onSubmit={handleSubmit}>
+        <Img src="./profile.png" alt="profile" />
 
-export default Login
+        <Label htmlFor="email">Email</Label>
+        <InputWrapper>
+          <Span><MdEmail /></Span>
+          <Input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            value={user.email}
+            onChange={handleInput}
+          />
+        </InputWrapper>
+        {errors.email && <Div>{errors.email}</Div>}
+
+        <Label htmlFor="password">Password</Label>
+        <InputWrapper>
+          <Span><RiLockPasswordFill /></Span>
+          <Input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            value={user.password}
+            onChange={handleInput}
+          />
+          <SpanIcon onClick={handleEye}>
+            {showPassword ? <BsEyeFill /> : <BsEyeSlash />}
+          </SpanIcon>
+        </InputWrapper>
+        {errors.password && <Div>{errors.password}</Div>}
+
+        <Button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </Button>
+      </Form>
+    </Section>
+  );
+};
+
+export default Login;
