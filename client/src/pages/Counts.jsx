@@ -28,7 +28,7 @@ const Counts = () => {
                 backgroundImage: `url(${bgImg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                padding: '50px 0px',
+                padding: '40px 0px',
                 position: 'relative',
                 zIndex: 1
             }}
@@ -55,19 +55,19 @@ const Counts = () => {
                     </div>
                     <div className="col-lg-3 col-6 text-center">
                         <span style={{ color: "#ff9219", fontSize: "40px", fontWeight: "700" }}>
-                            <Counters initialValue={1} targetValue={15} autoPlayInterval={80} />
+                            <Counters initialValue={1} targetValue={15} autoPlayInterval={80} symbol="+"/>
                         </span>
-                        <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Project delivered</p>
+                        <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Project Delivered</p>
                     </div>
                     <div className="col-lg-3 col-6 text-center">
                         <span style={{ color: "#ff9219", fontSize: "40px", fontWeight: "700" }}>
-                            <Counters initialValue={1} targetValue={350} autoPlayInterval={10} />
+                            <Counters initialValue={1} targetValue={300} autoPlayInterval={10} symbol="+"/>
                         </span>
-                        <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Happy client</p>
+                        <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Satisfied Clients</p>
                     </div>
                     <div className="col-lg-3 col-6 text-center">
                         <span style={{ color: "#ff9219", fontSize: "40px", fontWeight: "700" }}>
-                            <Counters initialValue={1} targetValue={250} autoPlayInterval={10} />
+                            <Counters initialValue={1} targetValue={250} autoPlayInterval={10} symbol="+"/>
                         </span>
                         <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700" }}>Coffee</p>
                     </div>

@@ -2,14 +2,20 @@ import AboutUs from './AboutUs';
 import Counts from './Counts';
 import ImageBanner from './ImageBanner';
 import ServiceCard from './ServiceCard';
+import TechStack from './TechStack';
+import Testimonials from './Testimonials';
+import WhyChoose from './WhyChoose';
 
 const Home = () => {
   return (
     <>
     <ImageBanner/>
     <AboutUs/>
-    <Counts/>
     <ServiceCard/>
+    <TechStack/>
+    <Counts/>
+    <WhyChoose/>
+    <Testimonials/>
     </>
   )
 }

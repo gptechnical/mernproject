@@ -1,0 +1,11 @@
+
+/* Icon box styling */
+.icon-box {
+  width: 52px;
+  height: 52px;
+  background: rgba(13,110,253,0.06);
+  color: #0d6efd;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+

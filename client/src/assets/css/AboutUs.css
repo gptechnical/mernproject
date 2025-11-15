@@ -1,8 +1,0 @@
-.img_about {
-    width: 70%;
-}
-@media (max-width: 425px) {
-    .img_about {
-    width: 100%;
-}
-}

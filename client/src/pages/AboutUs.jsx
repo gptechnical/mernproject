@@ -1,27 +1,38 @@
 import AboutImg from '../assets/images/About.png';
 import "../assets/css/AboutUs.css";
+import { FaArrowRight } from "react-icons/fa6";
 
 const AboutUs = () => {
   return (
     <>
-      <div className="container mt-4">
+      <div className="container mt-5 mb-5">
         <div className="row align-items-center justify-content-center">
           {/* Column 1: Text */}
           <div className="col-md-6">
-            <h2 style={{ fontWeight: "700", color: "#000a2d" }}>Welcome to</h2>
-            <h3 style={{fontWeight: "700", color: "red", fontSize: "40px"}}>codegptech</h3>
-            <p style={{ fontSize: "18px", fontWeight: "500", color: "#000000cf" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Aliquid placeat error quae, doloremque soluta blanditiis velit, 
-              incidunt obcaecati tenetur natus dolorum magnam beatae. Iusto, 
-              omnis tempore nobis voluptatum expedita pariatur.
+            <h2 style={{ fontWeight: "700", color: "#212529", fontSize: "2.5rem" }}>What’s Igniting Innovation in Codegptech Technologies</h2>
+            
+            <p style={{ fontSize: "16px", color: "#000000cf", textAlign: "justify" }}>
+             Codegptech is a creative and trusted IT solutions company focused on delivering powerful digital experiences.
+            We specialize in web development, backend development, UI/UX design, and digital marketing — helping businesses grow with smart and modern technology.
             </p>
-            <p style={{ fontSize: "18px", fontWeight: "500", color: "#000000cf" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Aliquid placeat error quae, doloremque soluta blanditiis velit, 
-              incidunt obcaecati tenetur natus dolorum magnam beatae. Iusto, 
-              omnis tempore nobis voluptatum expedita pariatur.
+            <p style={{ fontSize: "16px", color: "#000000cf", textAlign: "justify" }}>
+             Our team believes in innovation, quality, and customer satisfaction.
+             We work closely with every client to understand their goals and turn ideas into real results.
+
+              At codegptech, we aim to make technology simple, effective, and accessible for everyone.
+              With passion and dedication, we build solutions that empower businesses to shine in the digital world.
             </p>
+            {/* <ul style={{paddingLeft: "0px", listStyle: "none", fontWeight: "500"}}>
+              <li><FaAngleRight /> Solving Complex Problems</li>
+              <li><FaAngleRight /> Trusted and Reliable Service</li>
+              <li><FaAngleRight /> Future-Ready Technology</li>
+              
+            </ul> */}
+              <div className="mt-4">
+              <a href="/contact" className="btn mt-3 fw-bold border-0 text-white btn_text">
+                Talk to our experts <FaArrowRight />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Image */}
@@ -29,7 +40,7 @@ const AboutUs = () => {
             <img 
               src={AboutImg} 
               alt="About Us" 
-              className="img-fluid rounded img_about" 
+              className="img-fluid rounded" 
             />
           </div>
         </div>

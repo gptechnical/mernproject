@@ -188,7 +188,7 @@ const Navbar = () => {
             <NavLink onClick={() => navigation("/logout")}>Logout</NavLink>
           ) : (
             <>
-            <NavLink onClick={() => navigation("/register")}>Register</NavLink>
+            {/* <NavLink onClick={() => navigation("/register")}>Register</NavLink> */}
             <NavLink onClick={() => navigation("/login")}>Login</NavLink>
             </>
           )}
@@ -361,14 +361,14 @@ const Navbar = () => {
           </Link> 
           ) : (
             <>
-           <Link
+           {/* <Link
             onClick={() => {
               navigation("/register");
               setShowNavigation(!showNavigation);
             }}
           >
             Register
-          </Link> 
+          </Link>  */}
           <Link
             onClick={() => {
               navigation("/login");
