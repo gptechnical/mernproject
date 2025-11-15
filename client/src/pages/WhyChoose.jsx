@@ -1,5 +1,6 @@
 import { FaUsers, FaCheckCircle, FaPuzzlePiece, FaHeadset, FaArrowRight } from "react-icons/fa";
 import "../assets/css/WhyChooseus.css";
+import WhyChooseImg from "../assets/images/whychoose.png";
 
 const features = [
   {
@@ -38,7 +39,7 @@ export default function WhyChoose() {
           <div className="col-lg-6 mb-4 mb-lg-0">
             <div className="d-flex justify-content-center position-relative">
               <img
-                src="src/assets/images/whychoose.png"
+                src={WhyChooseImg}
                 alt="Why Choose Us"
                 className="img-fluid shadow-sm rounded-3"
               />
