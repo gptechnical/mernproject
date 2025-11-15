@@ -14,7 +14,7 @@ const Testimonials = ({ testimonials = null }) => {
       title: "Founder, BrightLeaf",
       quote:
         "Design-forward, rock-solid delivery — working with this team accelerated our roadmap by months.",
-      avatar: "https://i.pravatar.cc/120?img=3",
+  
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const Testimonials = ({ testimonials = null }) => {
       title: "CTO, NovaTech",
       quote:
         "The componentized approach made it trivial to reuse testimonial cards across our marketing pages.",
-      avatar: "https://i.pravatar.cc/120?img=5",
+   
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const Testimonials = ({ testimonials = null }) => {
       title: "Product Lead, Loop",
       quote:
         "Beautiful on mobile, delightful on desktop — accessibility and attention to detail stood out.",
-      avatar: "https://i.pravatar.cc/120?img=7",
+     
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const Testimonials = ({ testimonials = null }) => {
       title: "Head of Growth, Flux",
       quote:
         "Our conversion uplift after adding social proof was immediate. The UI matched our brand in minutes.",
-      avatar: "https://i.pravatar.cc/120?img=12",
+     
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ const Testimonials = ({ testimonials = null }) => {
       title: "Product Manager, NovaApps",
       quote:
         "Great communication, on-time delivery and very helpful throughout the project lifecycle.",
-      avatar: "https://i.pravatar.cc/120?img=15",
+      
     },
   ];
 
@@ -144,22 +144,7 @@ const settings = {
                 <p style={quoteStyle}>&ldquo;{t.quote}&rdquo;</p>
 
                 <div style={metaStyle}>
-                  <img
-                    src={t.avatar}
-                    alt={`${t.name} avatar`}
-                    style={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      border: "2px solid #0d6efd",
-                      padding: "2px"
-                    }}
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.src = "/assets/images/testi-placeholder.png";
-                    }}
-                  />
+               
                   <div>
                     <div
                       style={{
