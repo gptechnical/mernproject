@@ -50,7 +50,7 @@ const App = () => {
             </Route>
          </Routes>
          <Footer/>
-         <WhatsAppChat/>
+         {/* <WhatsAppChat/> */}
       </BrowserRouter>
     </> 
   )

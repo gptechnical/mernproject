@@ -3,6 +3,9 @@ import Counts from './Counts';
 import ImageBanner from './ImageBanner';
 import ServiceCard from './ServiceCard';
 import TechStack from './TechStack';
+import TestimonialsSlider from './Testimonials';
+import TestimonialsCarousel from './Testimonials';
+import TestimonialsBootstrap from './Testimonials';
 import Testimonials from './Testimonials';
 import WhyChoose from './WhyChoose';
 
@@ -15,7 +18,8 @@ const Home = () => {
     <TechStack/>
     <Counts/>
     <WhyChoose/>
-    <Testimonials/>
+    {/* <Testimonials/> */}
+    <TestimonialsCarousel/>
     </>
   )
 }

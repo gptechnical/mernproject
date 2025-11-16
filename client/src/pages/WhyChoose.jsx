@@ -33,7 +33,7 @@ export default function WhyChoose() {
   return (
     <section className="why-choose py-5">
       <div className="container">
-        <div className="row align-items-center gx-5">
+        <div className="row align-items-center">
 
           {/* Left Image */}
           <div className="col-lg-6 mb-4 mb-lg-0">

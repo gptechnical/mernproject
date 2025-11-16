@@ -2,7 +2,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 import "../assets/css/VideoCarousel.css";
 import "../assets/css/Button.css";
-import BgVideo from "../../public/ved.mp4";
+import BgVideo from "../assets/images/ved.mp4";
 import { FaArrowRight } from "react-icons/fa6";
 
 
