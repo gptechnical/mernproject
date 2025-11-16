@@ -12,6 +12,11 @@
   font-weight: 600;
   font-size: 25px;
 }
+.paragraph_one {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 70px;
+}
 @media (max-width: 425px){
   .img_res {
     width: 300px;
@@ -26,8 +31,17 @@
     height: 90vh;
   }
   .head{
-    font-size: 25px;
+    font-size: 30px;
   }
+
+}
+
+@media (max-width: 768px){
+  .paragraph_one {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 0px;
+}
 }
 
  .ImageAnimation {

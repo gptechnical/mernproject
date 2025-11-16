@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className="row align-items-center justify-content-center">
           {/* Column 1: Text */}
           <div className="col-md-6">
-            <h2 style={{ fontWeight: "700", color: "#212529", fontSize: "2.5rem" }}>What’s Igniting Innovation in Codegptech Technologies</h2>
+          <h2 className="fw-bold display-6 mb-3">Innovation That Powers Codegptech Technologies</h2>
             
             <p style={{ fontSize: "16px", color: "#000000cf", textAlign: "justify" }}>
              Codegptech is a creative and trusted IT solutions company focused on delivering powerful digital experiences.

@@ -40,8 +40,8 @@ const ImageBanner = () => {
         <div className="row h-100 align-items-center">
           <div className="col-12 cont_center" style={{ zIndex: 1 }}>
             <h2 className='head'><span style={{color: "#ff9219"}}>W</span>ebsite <span style={{color: "#0d6efd"}}>D</span>evelopment <span style={{color: "#ff9219"}}>C</span>ompany</h2>
-            <p style={{color: "#fff", fontSize: "20px", paddingTop: "8px"}}>Driving digital transformation through modern web development.
-              We craft fast, responsive, and user-friendly <br /> websites for every need.
+            <p className='paragraph_one'>Driving digital transformation through modern web development.
+              We craft fast, responsive, and user-friendly websites for every need.
               Choose codegptech — your trusted web development partner.</p>
             <p className='para'>
               High-Quality IT Services&nbsp;
