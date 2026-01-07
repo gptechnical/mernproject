@@ -6,6 +6,10 @@
   box-shadow: none !important;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
-
+.icon-box {
+  text-align: center;
+  line-height: 2;
+  border-radius: 10px;
+}
 
 

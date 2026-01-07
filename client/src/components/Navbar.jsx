@@ -184,11 +184,13 @@ const Navbar = () => {
           <NavLink onClick={() => navigation("/about")}>About Us</NavLink>
           <NavLink onClick={() => navigation("/service")}>Services</NavLink>
           <NavLink onClick={() => navigation("/contact")}>Contact Us</NavLink>
+          <NavLink onClick={() => navigation("/portfolio")}>Portfolio</NavLink>
+
           {isLoggedIn ? (
             <NavLink onClick={() => navigation("/logout")}>Logout</NavLink>
           ) : (
             <>
-            {/* <NavLink onClick={() => navigation("/register")}>Register</NavLink> */}
+            <NavLink onClick={() => navigation("/register")}>Register</NavLink>
             <NavLink onClick={() => navigation("/login")}>Login</NavLink>
             </>
           )}
@@ -349,6 +351,14 @@ const Navbar = () => {
             }}
           >
             Contact Us
+          </Link>
+           <Link
+            onClick={() => {
+              navigation("/portfolio");
+              setShowNavigation(!showNavigation);
+            }}
+          >
+            Portfolio
           </Link>
           { isLoggedIn ? (
             <Link
